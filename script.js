@@ -1,4 +1,4 @@
-const BASE_URL = "https://monagesalon.in/campaign/public";
+const BASE_URL = "https://monagesalon.in";
 const REDIRECT_URL = "https://telikozacademy.com/";
 const FIELD_LABELS = {
   name: "Full Name",
@@ -203,7 +203,7 @@ async function submitForm(event) {
   });
 
   try {
-    const response = await fetch(`${BASE_URL}/lead`, {
+const response = await fetch(`${BASE_URL}/telikoz_leads.php`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
