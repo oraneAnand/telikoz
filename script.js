@@ -179,17 +179,6 @@ async function submitForm(event) {
     return;
   }
 
-  const csrfToken = getCsrfToken();
-  if (!csrfToken) {
-    Swal.fire({
-      icon: "error",
-      title: "Configuration Error",
-      text: "Security token missing. Please refresh and try again."
-    });
-    setFormStatus("Security token missing. Please refresh and try again.");
-    return;
-  }
-
   const utm = getUTMParams();
   setSubmitting(true);
   setFormStatus("Submitting your application. Please wait.");
@@ -206,8 +195,7 @@ async function submitForm(event) {
 const response = await fetch(`${BASE_URL}/telikoz_leads.php`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        "X-CSRF-TOKEN": csrfToken
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
         name,
