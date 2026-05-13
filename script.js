@@ -1,4 +1,4 @@
-const BASE_URL = "https://monagesalon.in";
+const BASE_URL = "https://www.monagesalon.in";
 const REDIRECT_URL = "https://telikozacademy.com/";
 const FIELD_LABELS = {
   name: "Full Name",
